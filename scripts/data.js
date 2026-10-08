@@ -5,7 +5,7 @@ const PROFILE = {
 
   now: [
     "building workflows on n8n",
-    "fne-tuning small models on my own datai",
+    "fne-tuning small models on my own data",
     "looking for my next ai / web role",
   ],
 
