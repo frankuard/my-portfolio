@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth motion-reduce:scroll-auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>rk.dev</title>
+    <!-- font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" />
+
+    <!-- tailwind (built by npm run build) -->
+
+    <link rel="stylesheet" href="css/output.css" />
+
+    <!-- my external css -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body
+    class="bg-bg text-ink font-mono text-[15px] leading-relaxed pt-[env(safe-area-inset-top)] pb-[env(safe-area-inset-bottom)]">
+    <!-- top nav bar portion -->
+    <header
+      class="max-w-[1100px] mx-auto px-4 pt-3.5 flex flex-wrap items-center gap-2.5">
+      <button class="btn" id="open-menu">
+        command menu
+        <kbd class="border border-line rounded px-1.5 text-xs text-mute"
+          >Ctrl K</kbd
+        >
+      </button>
+      <span class="flex-1"></span>
+      <div
+        class="flex gap-1.5"
+        id="swatches"
+        role="group"
+        aria-label="Accent colour"></div>
+      <button
+        class="btn"
+        id="toggle-theme"
+        aria-label="Switch light or dark theme">
+        theme
+      </button>
+    </header>
+
+    <!-- all the windows -->
+    <main
+      class="max-w-[1100px] mx-auto px-4 pt-3 pb-10 grid grid-cols-1 md:grid-cols-12 gap-3">
+      <!-- home -->
+      <section class="pane md:col-span-7" id="home">
+        <div class="bar">
+          <button class="dot" aria-label="Collapse window"></button
+          ><span>~/home</span>
+        </div>
+        <div class="body">
+          <h1
+            class="text-[clamp(28px,5vw,44px)] leading-[1.1] tracking-tight font-semibold mt-1 mb-2.5">
+            <span id="name"></span>
+            <!-- blinking cursor -->
+            <span
+              class="inline-block w-[.5em] h-[1em] bg-acc align-[-.12em] animate-blink motion-reduce:animate-none"></span>
+          </h1>
+          <p id="tagline"></p>
+        </div>
+      </section>
+
+      <!-- now -->
+      <section class="pane md:col-span-5" id="now">
+        <div class="bar">
+          <button class="dot" aria-label="Collapse window"></button
+          ><span>~/now.log</span>
+        </div>
+        <div class="body"><ul id="now-list"></ul></div>
+      </section>
+
+      <!-- stack -->
+      <section class="pane md:col-span-5" id="stack">
+        <div class="bar">
+          <button class="dot" aria-label="Collapse window"></button
+          ><span>~/stack</span>
+        </div>
+        <div class="body">
+          <p class="text-mute mb-1">tap a tool to filter the projects below.</p>
+          <div id="stack-list"></div>
+        </div>
+      </section>
+
+      <!-- background -->
+      <section class="pane md:col-span-7" id="background">
+        <div class="bar">
+          <button class="dot" aria-label="Collapse window"></button
+          ><span>~/background</span>
+        </div>
+        <div class="body">
+          <div class="border-l-2 border-line ml-1" id="background-list"></div>
+        </div>
+      </section>
+
+      <!-- projects -->
+      <section class="pane md:col-span-12" id="projects">
+        <div class="bar">
+          <button class="dot" aria-label="Collapse window"></button
+          ><span id="projects-title">~/projects</span>
+        </div>
+        <div class="body"><div id="project-list"></div></div>
+      </section>
+
+      <!-- terminal -->
+      <section class="pane md:col-span-7" id="terminal">
+        <div class="bar">
+          <button class="dot" aria-label="Collapse window"></button
+          ><span>~/terminal</span>
+        </div>
+        <div class="body">
+          <div
+            id="terminal-output"
+            class="max-h-[220px] overflow-auto text-[13px] whitespace-pre-wrap"
+            aria-live="polite"></div>
+          <label class="flex items-center gap-2 mt-2 text-[13px]">
+            <span class="text-acc">$</span>
+            <input
+              id="terminal-input"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="type help"
+              class="flex-1 min-w-0 bg-transparent text-inherit border-0 border-b border-line py-0.5 focus:outline-none focus:border-acc" />
+          </label>
+        </div>
+      </section>
+
+      <!-- links -->
+      <section class="pane md:col-span-5" id="links">
+        <div class="bar">
+          <button class="dot" aria-label="Collapse window"></button
+          ><span>~/links</span>
+        </div>
+        <div class="body">
+          <div class="flex flex-col gap-1.5" id="link-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- command menu (ctrl + k) -->
+    <dialog
+      id="menu"
+      class="bg-pane text-ink border border-line rounded-xl p-0 w-[min(520px,92vw)] mt-[12vh] mx-auto font-mono backdrop:bg-black/50">
+      <input
+        id="menu-input"
+        placeholder="jump to, run, or open…"
+        aria-label="Command menu"
+        class="w-full bg-transparent text-inherit border-0 border-b border-line px-4 py-3.5 focus:outline-none" />
+      <ul id="menu-list" class="p-1.5 max-h-[50vh] overflow-auto"></ul>
+    </dialog>
+
+    <!-- js files, keep this order -->
+    <script src="scripts/data.js"></script>
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
