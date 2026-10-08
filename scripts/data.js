@@ -21,8 +21,7 @@ const PROFILE = {
   projects: [
     {
       name: "chautari",
-      summary:
-        "full-stack campus community platform with AI-powered assistance.",
+      summary: "full-stack campus platform with AI-powered assistance.",
       details:
         "MERN platform with role-based dashboards, real-time messaging, campus operations, and a RAG-powered AI assistant.",
       tags: ["react", "node.js", "mongodb", "socket.io", "groq"],
@@ -30,8 +29,7 @@ const PROFILE = {
     },
     {
       name: "ai-video-assistant",
-      summary:
-        "AI assistant that turns long-form videos into searchable content",
+      summary: "AI assistant that turns videos into searchable content",
       details:
         "Whisper transcription, LLM-generated summaries and action items, ChromaDB embeddings, semantic search, and RAG-based question answering.",
       tags: ["python", "langchain", "whisper", "chromadb", "groq"],
@@ -47,7 +45,7 @@ const PROFILE = {
     },
     {
       name: "banking-backend",
-      summary: "production-oriented banking backend built with Node.js.",
+      summary: "production level banking backend built with Node.js.",
       details:
         "REST API with JWT authentication, bcrypt hashing, token blacklisting, transactions, ledger records, idempotency, account management, and email notifications.",
       tags: ["node.js", "express", "mongodb", "jwt", "rest api"],
