@@ -42,8 +42,8 @@
   gap: 8px;
   background: var(--bar);
   color: var(--mute);
-  padding: 6px 12px;
-  font-size: 12px;
+  padding: 7px 13px;
+  font-size: 13px;
   border-bottom: 1px solid var(--line);
 }
 
