@@ -20,34 +20,38 @@ const PROFILE = {
 
   projects: [
     {
-      name: "assistant",
-      summary: "personal ai assistant that runs on my own hardware.",
-      details: "agent loop, tool calls and memory, all self-hosted.",
-      tags: ["python", "typescript", "docker"],
-      url: "https://github.com/",
-    },
-    {
-      name: "image-classifier",
-      summary: "small vision model with a web demo.",
+      name: "chautari",
+      summary:
+        "full-stack campus community platform with AI-powered assistance.",
       details:
-        "trained in pytorch, served over an api, used from a react page.",
-      tags: ["python", "pytorch", "react"],
-      url: "https://github.com/",
+        "MERN platform with role-based dashboards, real-time messaging, campus operations, and a RAG-powered AI assistant.",
+      tags: ["react", "node.js", "mongodb", "socket.io", "groq"],
+      url: "https://github.com/frankuard/MERN-SEP-PROJECT",
     },
     {
-      name: "rag-notes",
-      summary: "search and chat over my own notes.",
+      name: "ai-video-assistant",
+      summary:
+        "AI assistant that turns long-form videos into searchable content",
       details:
-        "embeddings in postgres, a node api, and a simple next.js front end.",
-      tags: ["hugging face", "postgres", "next.js", "node"],
-      url: "https://github.com/",
+        "Whisper transcription, LLM-generated summaries and action items, ChromaDB embeddings, semantic search, and RAG-based question answering.",
+      tags: ["python", "langchain", "whisper", "chromadb", "groq"],
+      url: "https://github.com/frankuard/video-assistant-with-rag",
     },
     {
-      name: "data-dash",
-      summary: "dashboard for exploring messy datasets.",
-      details: "pandas on the back end, charts in react.",
-      tags: ["pandas", "react", "typescript"],
-      url: "https://github.com/",
+      name: "ai-research-assistant",
+      summary: "multi-agent AI system for autonomous web research.",
+      details:
+        "Four-stage agent pipeline using Tavily search, webpage extraction, LangChain report generation, and a critic chain with a React and Tailwind interface.",
+      tags: ["python", "langchain", "groq", "react", "tavily", "fastapi"],
+      url: "https://github.com/frankuard/multi-agent-ai-research-system-using-langchain",
+    },
+    {
+      name: "banking-backend",
+      summary: "production-oriented banking backend built with Node.js.",
+      details:
+        "REST API with JWT authentication, bcrypt hashing, token blacklisting, transactions, ledger records, idempotency, account management, and email notifications.",
+      tags: ["node.js", "express", "mongodb", "jwt", "rest api"],
+      url: "https://github.com/frankuard/Bank-Management-System-Backend",
     },
   ],
 
