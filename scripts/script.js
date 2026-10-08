@@ -217,6 +217,8 @@ function openMenu() {
   active = 0;
   drawMenu();
   menu.showModal();
+  cursor.hidePopover?.(); // move the circle back on top of the menu
+  cursor.showPopover?.();
   menuInput.focus();
 }
 
@@ -262,6 +264,7 @@ document.addEventListener("keydown", (e) => {
 /* ---------- Circle cursor ---------- */
 
 const cursor = $("#cursor");
+cursor.showPopover?.(); // puts the circle in the top layer, above everything
 
 // follow the mouse
 document.addEventListener("mousemove", (e) => {
