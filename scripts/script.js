@@ -217,8 +217,7 @@ function openMenu() {
   active = 0;
   drawMenu();
   menu.showModal();
-  cursor.hidePopover?.(); // move the circle back on top of the menu
-  cursor.showPopover?.();
+  menu.append(cursor); // the circle shows on top of the menu
   menuInput.focus();
 }
 
@@ -264,7 +263,6 @@ document.addEventListener("keydown", (e) => {
 /* ---------- Circle cursor ---------- */
 
 const cursor = $("#cursor");
-cursor.showPopover?.(); // puts the circle in the top layer, above everything
 
 // follow the mouse
 document.addEventListener("mousemove", (e) => {
@@ -281,9 +279,12 @@ document.documentElement.addEventListener("mouseleave", () => {
 document.addEventListener("mouseover", (e) => {
   cursor.classList.toggle(
     "big",
-    !!e.target.closest("a, button, summary, input, label"),
+    !!e.target.closest("a, button, summary, input, label, li[data-i]"),
   );
 });
+
+// the command menu sits above the page, so move the circle into it while it is open
+menu.addEventListener("close", () => document.body.append(cursor));
 
 /* ---------- Typing name ---------- */
 
