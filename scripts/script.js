@@ -14,7 +14,6 @@ let filter = null; // tool selected in ~/stack, or null
 /* ---------- Sections ---------- */
 
 function renderAbout() {
-  $("#name").textContent = PROFILE.name;
   $("#tagline").textContent = PROFILE.tagline;
   $("#now-list").innerHTML = PROFILE.now
     .map(
@@ -282,3 +281,39 @@ document.addEventListener("mouseover", (e) => {
     !!e.target.closest("a, button, summary, input, label"),
   );
 });
+
+/* ---------- Typing name ---------- */
+
+function typeName() {
+  const el = $("#name");
+  const text = PROFILE.name;
+
+  // skip the animation if the visitor asked for less motion
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    el.textContent = text;
+    return;
+  }
+
+  let i = 0;
+  let deleting = false;
+
+  function tick() {
+    el.textContent = text.slice(0, i);
+    let delay = deleting ? 50 : 50; // both are fast
+
+    if (!deleting && i === text.length) {
+      deleting = true;
+      delay = 2500; // pause when fully written
+    } else if (deleting && i === 0) {
+      deleting = false;
+      delay = 1000; // pause when empty
+    } else {
+      i += deleting ? -1 : 1;
+    }
+    setTimeout(tick, delay);
+  }
+
+  tick();
+}
+
+typeName();
