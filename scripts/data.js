@@ -5,8 +5,8 @@ const PROFILE = {
 
   now: [
     "building workflows on n8n",
-    "fne-tuning small models on my own data",
-    "looking for my next ai / web role",
+    "combining fine-tuned models with rag",
+    "making production level web apps",
   ],
 
   // A project's tags must match these tool names for the filter to work
@@ -65,7 +65,6 @@ const PROFILE = {
       points: [
         "founded ai horizon community under bic devcorps at biratnagar international college",
         "lead the research side of BIC AI Horizon",
-        "pick directions and run experiments",
         "guide the team from idea to results",
       ],
     },
